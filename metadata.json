@@ -1,0 +1,31 @@
+{
+  "providing": {
+  },
+  "version": "0.0.2",
+  "recipes": {
+  },
+  "groupings": {
+  },
+  "attributes": {
+  },
+  "license": "mit",
+  "name": "logster",
+  "recommendations": {
+  },
+  "replacing": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "dependencies": {
+    "git": ">= 0.0.0"
+  },
+  "platforms": {
+    "ubuntu": ">= 0.0.0"
+  },
+  "maintainer_email": "shr3kst3r@gmail.com",
+  "description": "Chef cookbook for logster",
+  "maintainer": "Dennis Rowe",
+  "long_description": "= DESCRIPTION:\n\nA simple cookbook to install logster.\n\n= REQUIREMENTS:\n\nRequires the git cookbook.\n\n= USAGE:\n\n      logster_log \"/var/log/apache2/ex.log\" do\n         prefix \"logster.localhost.ex\"\n         output \"graphite\"\n         graphite_host \"127.0.0.1:2003\"\n         parser \"SampleLogster\"\n      end\n\n= LICENSE\n\nThe logster cookbook is released under the MIT license.\n"
+}
