@@ -8,16 +8,12 @@ Requires the git cookbook.
 
 = USAGE:
 
-[code lang="ruby"]
-    %w{ex1.log ex2.log ex3.log ex4.log}.each do |log|
-      logster_log "/var/log/apache2/#{log}" do
-         prefix "logster.localhost.#{log.split('.')[0]}"
+      logster_log "/var/log/apache2/ex.log" do
+         prefix "logster.localhost.ex"
          output "graphite"
          graphite_host "127.0.0.1:2003"
          parser "SampleLogster"
       end
-    end
-[/code]
 
 = LICENSE
 
