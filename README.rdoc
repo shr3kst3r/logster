@@ -1,0 +1,24 @@
+= DESCRIPTION:
+
+A simple cookbook to install logster.
+
+= REQUIREMENTS:
+
+Requires the git cookbook.
+
+= ATTRIBUTES:
+
+= USAGE:
+
+: %w{ex1.log ex2.log ex3.log ex4.log}.each do |log|
+:     logster_log "/var/log/apache2/#{log}" do
+:         prefix "logster.localhost.#{log.split('.')[0]}"
+:         output "graphite"
+:         graphite_host "127.0.0.1:2003"
+:         parser "SampleLogster"
+:     end
+: end
+
+= LICENSE
+
+The logster cookbook is released under the MIT license.
