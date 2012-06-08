@@ -17,7 +17,7 @@ Monitoring a log:
          parser "SampleLogster"
       end
 
-To remove logster you need to include logster::remove recipe.  This will remove the logster code, but not metrics or logs.
+To remove logster you need to remove the logster recipe and logster_log code blocks, then include the logster::remove recipe.  This will remove the logster code, but not the metrics or the logs.
 
 = LICENSE
 
