@@ -8,12 +8,16 @@ Requires the git cookbook.
 
 = USAGE:
 
+Monitoring a log:
+
       logster_log "/var/log/apache2/ex.log" do
          prefix "logster.localhost.ex"
          output "graphite"
          graphite_host "127.0.0.1:2003"
          parser "SampleLogster"
       end
+
+To remove logster you need to include logster::remove recipe.  This will remove the logster code, but not metrics or logs.
 
 = LICENSE
 
