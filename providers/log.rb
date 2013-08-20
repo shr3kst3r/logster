@@ -1,7 +1,7 @@
-action :add do
-    new_resource.updated_by_last_action(false)
+use_inline_resource
 
-    options = {}
+action :add do
+    options = Hash.new
 
     new_resource.prefix && options["--metric-prefix"] = new_resource.prefix
     new_resource.parser_options && options["--parser-options"] = new_resource.parser_options
