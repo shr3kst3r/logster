@@ -1,3 +1,4 @@
+name             'logster'
 maintainer       "Dennis Rowe"
 maintainer_email "shr3kst3r@gmail.com"
 license          "mit"
@@ -6,3 +7,4 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.0.3"
 
 supports "ubuntu"
+supports 'debian'
