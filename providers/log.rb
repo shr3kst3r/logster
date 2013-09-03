@@ -1,4 +1,4 @@
-use_inline_resource
+use_inline_resources
 
 action :add do
     options = Hash.new
