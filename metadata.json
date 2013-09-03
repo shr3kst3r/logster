@@ -3,7 +3,6 @@
   "attributes": {
   },
   "dependencies": {
-    "git": ">= 0.0.0"
   },
   "name": "logster",
   "recipes": {

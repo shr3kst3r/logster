@@ -1,4 +1,4 @@
-include_recipe "git"
+package 'git'
 
 package "logtail"
 
