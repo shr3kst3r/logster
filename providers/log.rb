@@ -15,6 +15,7 @@ action :add do
 
     cron "logster #{new_resource.log_file.gsub(/\//, '_')}" do
         command "/usr/bin/logster #{o} #{new_resource.parser} #{new_resource.log_file}"
+        minute "*/#{new_resource.frequency}"
         action :create
     end
 end

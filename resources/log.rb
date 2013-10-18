@@ -11,3 +11,4 @@ attribute :graphite_host, :kind_of => String
 attribute :state_dir, :kind_of => String
 attribute :output, :kind_of => String
 attribute :parser, :kind_of => String
+attribute :frequency, :kind_of => Integer, :default => 1
