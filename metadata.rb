@@ -4,7 +4,7 @@ maintainer_email "shr3kst3r@gmail.com"
 license          "mit"
 description      "Chef cookbook for logster"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
-version          "0.0.6"
+version          "0.0.7"
 
 supports "ubuntu"
 supports 'debian'
