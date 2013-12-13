@@ -6,5 +6,13 @@ description      'Chef cookbook for logster'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          '0.0.5'
 
-supports 'ubuntu'
+# platform_family: debian
 supports 'debian'
+supports 'ubuntu'
+
+# platform_family: rhel
+supports 'amazon'
+supports 'centos'
+supports 'oracle'
+supports 'redhat'
+supports 'scientific'

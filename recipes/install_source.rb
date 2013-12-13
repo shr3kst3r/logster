@@ -1,6 +1,10 @@
 package 'git'
 
-package "logtail"
+if platform_family?("rhel")
+    package "logcheck"
+else
+    package "logtail"
+end
 
 execute "git checkout logster" do
     command "git clone https://github.com/etsy/logster.git"
