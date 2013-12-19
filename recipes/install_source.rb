@@ -2,11 +2,11 @@ package 'git'
 
 package "logtail"
 
-execute "git checkout logster" do
-    command "git clone https://github.com/etsy/logster.git"
-    creates "/var/tmp/logster"
-    cwd "/var/tmp"
-    action :run
+git 'logster' do
+    repository "https://github.com/etsy/logster.git"
+    destination "/var/tmp/logster"
+    reference node[:logster][:version]
+    notifies :run, 'execute[create logster]'
 end
 
 directory "/usr/share/logster" do
