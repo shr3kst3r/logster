@@ -1,6 +1,7 @@
 use_inline_resources
 
 action :add do
+    require 'shellwords'
     options = Hash.new
 
     new_resource.prefix && options["--metric-prefix"] = new_resource.prefix
@@ -14,7 +15,7 @@ action :add do
     o = options.map{|k,v| "#{k}=#{v}"}.join(" ")
 
     cron "logster #{new_resource.log_file.gsub(/\//, '_')}" do
-        command "/usr/bin/logster #{o} #{new_resource.parser} #{new_resource.log_file}"
+        command "/usr/bin/logster #{o} #{new_resource.parser} '#{Shellwords.escape(new_resource.log_file)}'"
         minute "*/#{new_resource.frequency}"
         action :create
     end
