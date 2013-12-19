@@ -1,4 +1,4 @@
-file "/usr/sbin/logster" do
+file "/usr/bin/logster" do
     backup false
     action :delete
 end

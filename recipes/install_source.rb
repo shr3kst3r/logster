@@ -26,8 +26,8 @@ directory "/var/log/logster" do
 end
 
 execute "create logster" do
-    command "/usr/bin/install -m 0755 -t /usr/sbin /var/tmp/logster/bin/logster"
-    creates "/usr/sbin/logster"
+    command "/usr/bin/install -m 0755 -t /usr/bin /var/tmp/logster/bin/logster"
+    creates "/usr/bin/logster"
 end
 
 execute "create logster_helper" do
