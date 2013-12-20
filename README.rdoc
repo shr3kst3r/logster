@@ -1,12 +1,12 @@
-= DESCRIPTION:
+= DESCRIPTION
 
 A simple cookbook to install logster.
 
-= REQUIREMENTS:
+= REQUIREMENTS
 
-Requires the git cookbook.
+Requires git.
 
-= USAGE:
+= USAGE
 
 Monitoring a log:
 

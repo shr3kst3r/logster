@@ -1,6 +1,10 @@
-package 'git'
+package "git"
 
-package "logtail"
+if platform_family?("rhel")
+    package "logcheck"
+else
+    package "logtail"
+end
 
 git 'logster' do
     repository "https://github.com/etsy/logster.git"
@@ -22,20 +26,20 @@ directory "/var/log/logster" do
 end
 
 execute "create logster" do
-    command "/usr/bin/install -m 0755 -t /usr/sbin /var/tmp/logster/logster"
-    creates "/usr/sbin/logster"
+    command "/usr/bin/install -m 0755 -t /usr/bin /var/tmp/logster/bin/logster"
+    creates "/usr/bin/logster"
 end
 
 execute "create logster_helper" do
-    command "/usr/bin/install -m 0644 -t /usr/share/logster /var/tmp/logster/logster_helper.py"
+    command "/usr/bin/install -m 0644 -t /usr/share/logster /var/tmp/logster/logster/logster_helper.py"
     creates "/usr/share/logster/logster_helper.py"
 end
 
-if File.exists?("/var/tmp/logster/parsers") then
-    Dir.foreach("/var/tmp/logster/parsers") do |fname|
+if File.exists?("/var/tmp/logster/logster/parsers") then
+    Dir.foreach("/var/tmp/logster/logster/parsers") do |fname|
         next if fname == '.' or fname == '..'
         file "/usr/share/logster/#{fname}" do
-            content IO.read("/var/tmp/logster/parsers/#{fname}")
+            content IO.read("/var/tmp/logster/logster/parsers/#{fname}")
             owner "root"
             group "root"
             mode "0644"
