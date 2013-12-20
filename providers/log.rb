@@ -22,7 +22,7 @@ action :add do
 end
 
 action :remove do
-    cron "logster #{new_resource.gsub(/\//, '_')}" do
+    cron "logster #{new_resource.log_file.gsub(/\//, '_')}" do
         action :delete
     end
 end
